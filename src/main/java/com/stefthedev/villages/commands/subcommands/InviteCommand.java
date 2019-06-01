@@ -25,7 +25,7 @@ public class InviteCommand extends Command {
         if(args.length == 2) {
             Player target = villages.getServer().getPlayer(args[1]);
             if(target == null) {
-                player.sendMessage(Chat.format(Message.PLAYER_OFFLINE.toString()));
+                player.sendMessage(Chat.format(Message.PLAYER_OFFLINE.toString().replace("{0}", args[1])));
             } else {
                 Village village = villageManager.getVillage(player);
                 if(village == null) {
